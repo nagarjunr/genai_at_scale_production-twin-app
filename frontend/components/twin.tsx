@@ -96,7 +96,7 @@ export default function Twin() {
             <div className="relative bg-gradient-to-r from-cyan-600 via-sky-500 to-cyan-600 text-white p-5 md:p-6">
                 <div className="absolute inset-0 bg-white/5 backdrop-blur-sm" />
                 <div className="relative flex items-center gap-3 md:gap-4">
-                    <div className="w-10 h-10 md:w-12 md:h-12 bg-white/90 rounded-2xl flex items-center justify-center shadow-md overflow-hidden">
+                    <div className="w-10 h-10 md:w-12 md:h-12 bg-white/90 rounded-full flex items-center justify-center shadow-md overflow-hidden">
                         <img src="/avatar.jpeg" alt="Assistant" className="w-full h-full object-cover" />
                     </div>
                     <div>
@@ -111,7 +111,7 @@ export default function Twin() {
                 {messages.length === 0 && (
                     <div className="flex flex-col items-center justify-center h-full text-center">
                         <div className="relative">
-                            <div className="relative w-20 h-20 md:w-24 md:h-24 bg-white rounded-3xl flex items-center justify-center shadow-xl mb-6 overflow-hidden">
+                            <div className="relative w-20 h-20 md:w-24 md:h-24 bg-white rounded-full flex items-center justify-center shadow-xl mb-6 overflow-hidden">
                                 <img src="/avatar.jpeg" alt="Assistant" className="w-full h-full object-cover" />
                             </div>
                         </div>
@@ -131,7 +131,7 @@ export default function Twin() {
                     >
                         {message.role === 'assistant' && (
                             <div className="flex-shrink-0">
-                                <div className="w-9 h-9 md:w-11 md:h-11 bg-white rounded-2xl flex items-center justify-center shadow-md overflow-hidden">
+                                <div className="w-9 h-9 md:w-11 md:h-11 bg-white rounded-full flex items-center justify-center shadow-md overflow-hidden">
                                     <img src="/avatar.jpeg" alt="Assistant" className="w-full h-full object-cover" />
                                 </div>
                             </div>
@@ -167,7 +167,7 @@ export default function Twin() {
                 {isLoading && (
                     <div className="flex gap-3 justify-start">
                         <div className="flex-shrink-0">
-                            <div className="w-9 h-9 md:w-11 md:h-11 bg-white rounded-2xl flex items-center justify-center shadow-md overflow-hidden animate-pulse">
+                            <div className="w-9 h-9 md:w-11 md:h-11 bg-white rounded-full flex items-center justify-center shadow-md overflow-hidden animate-pulse">
                                 <img src="/avatar.jpeg" alt="Assistant" className="w-full h-full object-cover" />
                             </div>
                         </div>
