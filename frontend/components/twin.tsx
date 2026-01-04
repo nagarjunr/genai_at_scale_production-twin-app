@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useRef, useEffect } from 'react';
-import { Send, Bot } from 'lucide-react';
+import { Send, User } from 'lucide-react';
 
 interface Message {
     id: string;
@@ -96,8 +96,8 @@ export default function Twin() {
             <div className="relative bg-gradient-to-r from-cyan-600 via-sky-500 to-cyan-600 text-white p-5 md:p-6">
                 <div className="absolute inset-0 bg-white/5 backdrop-blur-sm" />
                 <div className="relative flex items-center gap-3 md:gap-4">
-                    <div className="w-10 h-10 md:w-12 md:h-12 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center ring-2 ring-white/30">
-                        <Bot className="w-6 h-6 md:w-7 md:h-7 text-white" />
+                    <div className="w-10 h-10 md:w-12 md:h-12 bg-white/90 rounded-2xl flex items-center justify-center shadow-md overflow-hidden">
+                        <img src="/avatar.jpeg" alt="Assistant" className="w-full h-full object-cover" />
                     </div>
                     <div>
                         <h2 className="text-lg md:text-xl font-bold tracking-tight">Chat with Nagarjun's Twin</h2>
@@ -111,9 +111,8 @@ export default function Twin() {
                 {messages.length === 0 && (
                     <div className="flex flex-col items-center justify-center h-full text-center">
                         <div className="relative">
-                            <div className="absolute inset-0 bg-cyan-400/20 blur-2xl rounded-full" />
-                            <div className="relative w-20 h-20 md:w-24 md:h-24 bg-gradient-to-br from-cyan-500 to-sky-500 rounded-3xl flex items-center justify-center shadow-xl mb-6">
-                                <Bot className="w-12 h-12 md:w-14 md:h-14 text-white" />
+                            <div className="relative w-20 h-20 md:w-24 md:h-24 bg-white rounded-3xl flex items-center justify-center shadow-xl mb-6 overflow-hidden">
+                                <img src="/avatar.jpeg" alt="Assistant" className="w-full h-full object-cover" />
                             </div>
                         </div>
                         <h3 className="text-xl md:text-2xl font-bold text-cyan-700 mb-2">Welcome</h3>
@@ -132,8 +131,8 @@ export default function Twin() {
                     >
                         {message.role === 'assistant' && (
                             <div className="flex-shrink-0">
-                                <div className="w-9 h-9 md:w-11 md:h-11 bg-gradient-to-br from-cyan-500 to-sky-600 rounded-2xl flex items-center justify-center shadow-lg ring-2 ring-cyan-200/50">
-                                    <Bot className="w-5 h-5 md:w-6 md:h-6 text-white" />
+                                <div className="w-9 h-9 md:w-11 md:h-11 bg-white rounded-2xl flex items-center justify-center shadow-md overflow-hidden">
+                                    <img src="/avatar.jpeg" alt="Assistant" className="w-full h-full object-cover" />
                                 </div>
                             </div>
                         )}
@@ -157,8 +156,8 @@ export default function Twin() {
 
                         {message.role === 'user' && (
                             <div className="flex-shrink-0">
-                                <div className="w-9 h-9 md:w-11 md:h-11 bg-gradient-to-br from-cyan-400 to-sky-400 rounded-2xl flex items-center justify-center shadow-lg ring-2 ring-cyan-200/50 overflow-hidden">
-                                    <img src="/avatar.jpeg" alt="User" className="w-full h-full object-cover" />
+                                <div className="w-9 h-9 md:w-11 md:h-11 bg-gradient-to-br from-cyan-400 to-sky-400 rounded-2xl flex items-center justify-center shadow-lg ring-2 ring-cyan-200/50">
+                                    <User className="w-5 h-5 md:w-6 md:h-6 text-white" />
                                 </div>
                             </div>
                         )}
@@ -168,8 +167,8 @@ export default function Twin() {
                 {isLoading && (
                     <div className="flex gap-3 justify-start">
                         <div className="flex-shrink-0">
-                            <div className="w-9 h-9 md:w-11 md:h-11 bg-gradient-to-br from-cyan-500 to-sky-600 rounded-2xl flex items-center justify-center shadow-lg ring-2 ring-cyan-200/50 animate-pulse">
-                                <Bot className="w-5 h-5 md:w-6 md:h-6 text-white" />
+                            <div className="w-9 h-9 md:w-11 md:h-11 bg-white rounded-2xl flex items-center justify-center shadow-md overflow-hidden animate-pulse">
+                                <img src="/avatar.jpeg" alt="Assistant" className="w-full h-full object-cover" />
                             </div>
                         </div>
                         <div className="bg-white/90 backdrop-blur-sm border border-cyan-100/50 rounded-3xl p-4 md:p-5 shadow-lg">
