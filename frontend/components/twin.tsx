@@ -91,7 +91,7 @@ export default function Twin() {
     };
 
     return (
-        <div className="flex flex-col h-full bg-white/60 backdrop-blur-xl rounded-3xl shadow-2xl border border-cyan-200/50 overflow-hidden">
+        <div className="flex flex-col h-full bg-white/60 backdrop-blur-xl rounded-xl shadow-2xl border border-cyan-200/50 overflow-hidden">
             {/* Elegant Header */}
             <div className="relative bg-gradient-to-r from-cyan-600 via-sky-500 to-cyan-600 text-white p-5 md:p-6">
                 <div className="absolute inset-0 bg-white/5 backdrop-blur-sm" />
@@ -138,7 +138,7 @@ export default function Twin() {
                         )}
 
                         <div
-                            className={`max-w-[75%] md:max-w-[80%] rounded-3xl p-4 md:p-5 shadow-lg transition-all hover:shadow-xl ${
+                            className={`max-w-[75%] md:max-w-[80%] rounded-xl p-4 md:p-5 shadow-lg transition-all hover:shadow-xl ${
                                 message.role === 'user'
                                     ? 'bg-gradient-to-br from-cyan-600 to-sky-600 text-white'
                                     : 'bg-white/90 backdrop-blur-sm border border-cyan-100/50 text-gray-800'
@@ -156,7 +156,7 @@ export default function Twin() {
 
                         {message.role === 'user' && (
                             <div className="flex-shrink-0">
-                                <div className="w-9 h-9 md:w-11 md:h-11 bg-gradient-to-br from-cyan-400 to-sky-400 rounded-2xl flex items-center justify-center shadow-lg ring-2 ring-cyan-200/50">
+                                <div className="w-9 h-9 md:w-11 md:h-11 bg-gradient-to-br from-cyan-400 to-sky-400 rounded-full flex items-center justify-center shadow-lg ring-2 ring-cyan-200/50">
                                     <User className="w-5 h-5 md:w-6 md:h-6 text-white" />
                                 </div>
                             </div>
@@ -171,7 +171,7 @@ export default function Twin() {
                                 <img src="/avatar.jpeg" alt="Assistant" className="w-full h-full object-cover" />
                             </div>
                         </div>
-                        <div className="bg-white/90 backdrop-blur-sm border border-cyan-100/50 rounded-3xl p-4 md:p-5 shadow-lg">
+                        <div className="bg-white/90 backdrop-blur-sm border border-cyan-100/50 rounded-xl p-4 md:p-5 shadow-lg">
                             <div className="flex space-x-2">
                                 <div className="w-2.5 h-2.5 bg-gradient-to-r from-cyan-500 to-sky-500 rounded-full animate-bounce" />
                                 <div className="w-2.5 h-2.5 bg-gradient-to-r from-sky-500 to-cyan-500 rounded-full animate-bounce delay-100" />
@@ -193,13 +193,13 @@ export default function Twin() {
                         onChange={(e) => setInput(e.target.value)}
                         onKeyDown={handleKeyPress}
                         placeholder="Ask a question..."
-                        className="flex-1 px-5 md:px-6 py-3 md:py-4 border border-cyan-200/60 rounded-2xl focus:outline-none focus:ring-2 focus:ring-cyan-400/50 focus:border-cyan-400 text-gray-800 bg-white/80 placeholder-cyan-400/60 text-sm md:text-base shadow-sm transition-all"
+                        className="flex-1 px-5 md:px-6 py-3 md:py-4 border border-cyan-200/60 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-400/50 focus:border-cyan-400 text-gray-800 bg-white/80 placeholder-cyan-400/60 text-sm md:text-base shadow-sm transition-all"
                         disabled={isLoading}
                     />
                     <button
                         onClick={sendMessage}
                         disabled={!input.trim() || isLoading}
-                        className="px-5 md:px-7 py-3 md:py-4 bg-gradient-to-r from-cyan-600 to-sky-600 text-white rounded-2xl hover:from-cyan-700 hover:to-sky-700 focus:outline-none focus:ring-2 focus:ring-cyan-400/50 disabled:opacity-40 disabled:cursor-not-allowed transition-all shadow-lg hover:shadow-xl hover:scale-105 active:scale-95"
+                        className="px-5 md:px-7 py-3 md:py-4 bg-gradient-to-r from-cyan-600 to-sky-600 text-white rounded-lg hover:from-cyan-700 hover:to-sky-700 focus:outline-none focus:ring-2 focus:ring-cyan-400/50 disabled:opacity-40 disabled:cursor-not-allowed transition-all shadow-lg hover:shadow-xl hover:scale-105 active:scale-95"
                     >
                         <Send className="w-5 h-5" />
                     </button>

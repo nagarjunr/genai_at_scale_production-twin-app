@@ -20,7 +20,7 @@ export default function Home() {
           <footer className="text-center">
             <div className="inline-block bg-white/40 backdrop-blur-sm rounded-full px-6 py-2 border border-cyan-200/50">
               <p className="text-xs text-cyan-600/70">
-                &copy; {new Date().getFullYear()} · AI-Powered Insights · 
+                &copy; {new Date().getFullYear()} Nagarjun · AI-Powered Insights · 
                 <span className="text-cyan-500/60 ml-1">Verify independently</span>
               </p>
             </div>

@@ -581,7 +581,7 @@ Open another new terminal:
 
 ```bash
 cd frontend
-npm run dev
+npm run dev -- -p 5000
 ```
 
 You should see:
