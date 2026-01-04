@@ -91,32 +91,31 @@ export default function Twin() {
     };
 
     return (
-        <div className="flex flex-col h-full bg-white/90 backdrop-blur-2xl rounded-xl shadow-[0_8px_32px_rgba(0,0,0,0.1)] overflow-hidden transition-all duration-300">
-            {/* Premium Header */}
-            <div className="relative bg-gradient-to-r from-slate-700 via-slate-600 to-slate-700 text-white p-5 md:p-6 shadow-lg">
-                <div className="absolute inset-0 bg-gradient-to-b from-white/15 via-white/5 to-transparent" />
-                <div className="relative flex items-center gap-3 md:gap-4">
-                    <div className="w-10 h-10 md:w-12 md:h-12 bg-white rounded-full flex items-center justify-center shadow-xl ring-2 ring-white/30 overflow-hidden transition-transform duration-300 hover:scale-105">
+        <div className="flex flex-col h-full bg-transparent overflow-hidden">
+            {/* Glassmorphism Header */}
+            <div className="relative backdrop-blur-md bg-white/40 border-b border-white/20 p-6 md:p-8">
+                <div className="flex items-center gap-4">
+                    <div className="w-11 h-11 md:w-12 md:h-12 bg-white/90 rounded-full flex items-center justify-center shadow-lg ring-1 ring-black/5 overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-xl">
                         <img src="/avatar.jpeg" alt="Assistant" className="w-full h-full object-cover" />
                     </div>
                     <div>
-                        <h2 className="text-lg md:text-xl font-bold tracking-tight">Chat with Nagarjun's Twin</h2>
-                        <p className="text-xs md:text-sm text-white/90 font-medium mt-1">AI-Powered Digital Assistant</p>
+                        <h2 className="text-lg md:text-xl font-semibold tracking-tight text-gray-900">Nagarjun's Digital Twin</h2>
+                        <p className="text-xs md:text-sm text-gray-600 font-medium mt-0.5">AI-Powered Assistant</p>
                     </div>
                 </div>
             </div>
 
             {/* Messages */}
-            <div className="flex-1 overflow-y-auto p-4 md:p-6 space-y-4 bg-gradient-to-b from-slate-50/50 via-gray-50/30 to-white/50">
+            <div className="flex-1 overflow-y-auto p-6 md:p-8 space-y-6 bg-gradient-to-b from-white/50 to-white/30">
                 {messages.length === 0 && (
-                    <div className="flex flex-col items-center justify-center h-full text-center animate-fade-in">
-                        <div className="relative mb-6 group">
-                            <div className="relative w-20 h-20 md:w-24 md:h-24 bg-white rounded-full flex items-center justify-center shadow-2xl ring-2 ring-slate-200/60 overflow-hidden transition-all duration-500 group-hover:shadow-[0_20px_60px_rgba(0,0,0,0.15)] group-hover:scale-105">
+                    <div className="flex flex-col items-center justify-center h-full text-center px-4">
+                        <div className="relative mb-12 group">
+                            <div className="relative w-28 h-28 md:w-32 md:h-32 bg-white rounded-full flex items-center justify-center shadow-2xl ring-1 ring-black/5 overflow-hidden transition-all duration-500 group-hover:shadow-[0_20px_60px_rgba(0,0,0,0.15)] group-hover:scale-105">
                                 <img src="/avatar.jpeg" alt="Assistant" className="w-full h-full object-cover" />
                             </div>
                         </div>
-                        <h3 className="text-xl md:text-2xl font-bold text-slate-800 mb-2">Welcome</h3>
-                        <p className="text-sm md:text-base text-slate-600 max-w-md">
+                        <h3 className="text-2xl md:text-3xl font-semibold text-gray-900 mb-3">Welcome</h3>
+                        <p className="text-base md:text-lg text-gray-600 max-w-md leading-relaxed">
                             How can I help you today?
                         </p>
                     </div>
@@ -131,23 +130,23 @@ export default function Twin() {
                     >
                         {message.role === 'assistant' && (
                             <div className="flex-shrink-0">
-                                <div className="w-9 h-9 md:w-11 md:h-11 bg-white rounded-full flex items-center justify-center shadow-lg ring-2 ring-slate-200/40 overflow-hidden transition-all duration-300 hover:shadow-xl hover:scale-105">
+                                <div className="w-9 h-9 md:w-10 md:h-10 bg-white rounded-full flex items-center justify-center shadow-md ring-1 ring-black/5 overflow-hidden transition-all duration-300 hover:shadow-lg hover:scale-105">
                                     <img src="/avatar.jpeg" alt="Assistant" className="w-full h-full object-cover" />
                                 </div>
                             </div>
                         )}
 
                         <div
-                            className={`max-w-[75%] md:max-w-[80%] rounded-xl p-4 md:p-5 shadow-lg transition-all duration-300 hover:shadow-2xl hover:-translate-y-0.5 ${
+                            className={`max-w-[75%] md:max-w-[80%] rounded-2xl p-4 md:p-5 shadow-sm transition-all duration-300 hover:shadow-md ${
                                 message.role === 'user'
-                                    ? 'bg-gradient-to-br from-slate-600 to-slate-700 text-white hover:from-slate-700 hover:to-slate-800'
-                                    : 'bg-white/95 backdrop-blur-sm border border-slate-200/70 text-slate-800 hover:border-slate-300'
+                                    ? 'bg-gray-900 text-white'
+                                    : 'bg-white/95 backdrop-blur-sm text-gray-900 ring-1 ring-black/5'
                             }`}
                         >
-                            <p className="whitespace-pre-wrap text-sm md:text-base leading-relaxed">{message.content}</p>
+                            <p className="text-sm md:text-base leading-relaxed">{message.content}</p>
                             <p
-                                className={`text-xs mt-2 font-medium opacity-70 ${
-                                    message.role === 'user' ? 'text-white' : 'text-slate-500'
+                                className={`text-xs mt-2 font-medium ${
+                                    message.role === 'user' ? 'text-white/50' : 'text-gray-400'
                                 }`}
                             >
                                 {message.timestamp.toLocaleTimeString()}
@@ -156,8 +155,8 @@ export default function Twin() {
 
                         {message.role === 'user' && (
                             <div className="flex-shrink-0">
-                                <div className="w-9 h-9 md:w-11 md:h-11 bg-gradient-to-br from-slate-500 to-slate-600 rounded-full flex items-center justify-center shadow-lg ring-2 ring-slate-300/60 transition-all duration-300 hover:shadow-xl hover:scale-105">
-                                    <User className="w-5 h-5 md:w-6 md:h-6 text-white" />
+                                <div className="w-9 h-9 md:w-10 md:h-10 bg-gray-900 rounded-full flex items-center justify-center shadow-md ring-1 ring-black/5 transition-all duration-300 hover:shadow-lg hover:scale-105">
+                                    <User className="w-5 h-5 md:w-5.5 md:h-5.5 text-white" />
                                 </div>
                             </div>
                         )}
@@ -167,15 +166,15 @@ export default function Twin() {
                 {isLoading && (
                     <div className="flex gap-3 justify-start animate-fade-in">
                         <div className="flex-shrink-0">
-                            <div className="w-9 h-9 md:w-11 md:h-11 bg-white rounded-full flex items-center justify-center shadow-lg ring-2 ring-slate-200/40 overflow-hidden animate-pulse">
+                            <div className="w-9 h-9 md:w-10 md:h-10 bg-white rounded-full flex items-center justify-center shadow-md ring-1 ring-black/5 overflow-hidden animate-pulse">
                                 <img src="/avatar.jpeg" alt="Assistant" className="w-full h-full object-cover" />
                             </div>
                         </div>
-                        <div className="bg-white/95 backdrop-blur-sm border border-slate-200/70 rounded-xl p-4 md:p-5 shadow-lg">
+                        <div className="bg-white/95 backdrop-blur-sm ring-1 ring-black/5 rounded-2xl p-4 md:p-5 shadow-sm">
                             <div className="flex space-x-2">
-                                <div className="w-2.5 h-2.5 bg-gradient-to-r from-slate-400 to-slate-500 rounded-full animate-bounce" />
-                                <div className="w-2.5 h-2.5 bg-gradient-to-r from-slate-500 to-slate-600 rounded-full animate-bounce" style={{animationDelay: '0.1s'}} />
-                                <div className="w-2.5 h-2.5 bg-gradient-to-r from-slate-400 to-slate-500 rounded-full animate-bounce" style={{animationDelay: '0.2s'}} />
+                                <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" />
+                                <div className="w-2 h-2 bg-gray-500 rounded-full animate-bounce" style={{animationDelay: '0.1s'}} />
+                                <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{animationDelay: '0.2s'}} />
                             </div>
                         </div>
                     </div>
@@ -184,25 +183,31 @@ export default function Twin() {
                 <div ref={messagesEndRef} />
             </div>
 
-            {/* Premium Input */}
-            <div className="border-t border-slate-200/60 p-5 md:p-6 bg-white/70 backdrop-blur-lg shadow-inner">
-                <div className="flex gap-3">
-                    <input
-                        type="text"
-                        value={input}
-                        onChange={(e) => setInput(e.target.value)}
-                        onKeyDown={handleKeyPress}
-                        placeholder="Ask a question..."
-                        className="flex-1 px-5 md:px-6 py-3 md:py-4 border border-slate-300/60 rounded-lg focus:outline-none focus:ring-2 focus:ring-slate-400/40 focus:border-slate-400/60 text-slate-800 bg-white/95 placeholder-slate-400 text-sm md:text-base shadow-sm transition-all duration-300 hover:border-slate-400/60"
-                        disabled={isLoading}
-                    />
-                    <button
-                        onClick={sendMessage}
-                        disabled={!input.trim() || isLoading}
-                        className="px-5 md:px-7 py-3 md:py-4 bg-gradient-to-r from-slate-600 to-slate-700 text-white rounded-lg hover:from-slate-700 hover:to-slate-800 focus:outline-none focus:ring-2 focus:ring-slate-400/40 disabled:opacity-40 disabled:cursor-not-allowed transition-all duration-300 shadow-lg hover:shadow-2xl hover:scale-105 active:scale-95"
-                    >
-                        <Send className="w-5 h-5" />
-                    </button>
+            {/* Modern Floating Input */}
+            <div className="p-6 md:p-8">
+                <div className="max-w-4xl mx-auto">
+                    <div className="relative flex items-center gap-2 bg-white rounded-full shadow-lg ring-1 ring-black/5 px-5 py-3 transition-all duration-300 hover:shadow-xl focus-within:shadow-xl focus-within:ring-2 focus-within:ring-blue-500/20">
+                        <input
+                            type="text"
+                            value={input}
+                            onChange={(e) => setInput(e.target.value)}
+                            onKeyDown={handleKeyPress}
+                            placeholder="Ask a question..."
+                            className="flex-1 px-2 py-2 bg-transparent text-gray-900 placeholder-gray-400 text-sm md:text-base focus:outline-none"
+                            disabled={isLoading}
+                        />
+                        <button
+                            onClick={sendMessage}
+                            disabled={!input.trim() || isLoading}
+                            className={`p-2.5 rounded-full transition-all duration-300 ${
+                                input.trim() && !isLoading
+                                    ? 'bg-blue-600 text-white shadow-md hover:bg-blue-700 hover:shadow-lg hover:scale-105 active:scale-95'
+                                    : 'bg-gray-100 text-gray-400 cursor-not-allowed'
+                            }`}
+                        >
+                            <Send className="w-4.5 h-4.5" />
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
