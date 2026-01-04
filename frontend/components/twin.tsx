@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useRef, useEffect } from 'react';
-import { Send, Bot, User } from 'lucide-react';
+import { Send, Bot } from 'lucide-react';
 
 interface Message {
     id: string;
@@ -157,8 +157,8 @@ export default function Twin() {
 
                         {message.role === 'user' && (
                             <div className="flex-shrink-0">
-                                <div className="w-9 h-9 md:w-11 md:h-11 bg-gradient-to-br from-cyan-400 to-sky-400 rounded-2xl flex items-center justify-center shadow-lg ring-2 ring-cyan-200/50">
-                                    <User className="w-5 h-5 md:w-6 md:h-6 text-white" />
+                                <div className="w-9 h-9 md:w-11 md:h-11 bg-gradient-to-br from-cyan-400 to-sky-400 rounded-2xl flex items-center justify-center shadow-lg ring-2 ring-cyan-200/50 overflow-hidden">
+                                    <img src="/avatar.jpeg" alt="User" className="w-full h-full object-cover" />
                                 </div>
                             </div>
                         )}
