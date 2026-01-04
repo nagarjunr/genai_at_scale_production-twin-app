@@ -91,7 +91,7 @@ export default function Twin() {
     };
 
     return (
-        <div className="flex flex-col h-full bg-white/90 backdrop-blur-2xl rounded-xl shadow-[0_8px_32px_rgba(0,0,0,0.1)] border border-white/60 overflow-hidden transition-all duration-300">
+        <div className="flex flex-col h-full bg-white/90 backdrop-blur-2xl rounded-xl shadow-[0_8px_32px_rgba(0,0,0,0.1)] overflow-hidden transition-all duration-300">
             {/* Premium Header */}
             <div className="relative bg-gradient-to-r from-slate-700 via-slate-600 to-slate-700 text-white p-5 md:p-6 shadow-lg">
                 <div className="absolute inset-0 bg-gradient-to-b from-white/15 via-white/5 to-transparent" />
@@ -193,13 +193,13 @@ export default function Twin() {
                         onChange={(e) => setInput(e.target.value)}
                         onKeyDown={handleKeyPress}
                         placeholder="Ask a question..."
-                        className="flex-1 px-5 md:px-6 py-3 md:py-4 border border-slate-300/60 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400/40 focus:border-indigo-400/60 text-slate-800 bg-white/95 placeholder-slate-400 text-sm md:text-base shadow-sm transition-all duration-300 hover:border-slate-400/60"
+                        className="flex-1 px-5 md:px-6 py-3 md:py-4 border border-slate-300/60 rounded-lg focus:outline-none focus:ring-2 focus:ring-slate-400/40 focus:border-slate-400/60 text-slate-800 bg-white/95 placeholder-slate-400 text-sm md:text-base shadow-sm transition-all duration-300 hover:border-slate-400/60"
                         disabled={isLoading}
                     />
                     <button
                         onClick={sendMessage}
                         disabled={!input.trim() || isLoading}
-                        className="px-5 md:px-7 py-3 md:py-4 bg-gradient-to-r from-slate-600 to-slate-700 text-white rounded-lg hover:from-slate-700 hover:to-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-400/40 disabled:opacity-40 disabled:cursor-not-allowed transition-all duration-300 shadow-lg hover:shadow-2xl hover:scale-105 active:scale-95"
+                        className="px-5 md:px-7 py-3 md:py-4 bg-gradient-to-r from-slate-600 to-slate-700 text-white rounded-lg hover:from-slate-700 hover:to-slate-800 focus:outline-none focus:ring-2 focus:ring-slate-400/40 disabled:opacity-40 disabled:cursor-not-allowed transition-all duration-300 shadow-lg hover:shadow-2xl hover:scale-105 active:scale-95"
                     >
                         <Send className="w-5 h-5" />
                     </button>
