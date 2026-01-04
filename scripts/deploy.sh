@@ -30,7 +30,14 @@ fi
 
 # Use prod.tfvars for production environment
 if [ "$ENVIRONMENT" = "prod" ]; then
-  TF_APPLY_CMD=(terraform apply -var-file=../terraform/prod.tfvars -var="project_name=$PROJECT_NAME" -var="environment=$ENVIRONMENT" -auto-approve)
+  echo "📋 Checking for prod.tfvars..."
+  if [ ! -f "prod.tfvars" ]; then
+    echo "❌ Error: prod.tfvars not found in $(pwd)"
+    ls -la *.tfvars || echo "No .tfvars files found"
+    exit 1
+  fi
+  echo "✓ Found prod.tfvars"
+  TF_APPLY_CMD=(terraform apply -var-file=prod.tfvars -var="project_name=$PROJECT_NAME" -var="environment=$ENVIRONMENT" -auto-approve)
 else
   TF_APPLY_CMD=(terraform apply -var="project_name=$PROJECT_NAME" -var="environment=$ENVIRONMENT" -auto-approve)
 fi
